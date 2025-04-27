@@ -6,8 +6,9 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
-      origin: ['*'], // أو حدد رابط الواجهة الأمامية بالتحديد لأمان أكثر
+      origin: ['https://ecommerce-frontend-ou6c.onrender.com'], // هنا تحدد واجهتك
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+      headers: '*',
     },
   },
   'strapi::poweredBy',
