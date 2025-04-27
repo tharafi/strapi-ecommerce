@@ -16,4 +16,20 @@ module.exports = [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        directives: {
+          'connect-src': ["'self'", 'http:', 'https:'],
+        },
+      },
+      cors: {
+        origin: ['http://localhost:5173', 'https://ecommerce-frontend-ou6c.onrender.com'],
+        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
+        headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+        keepHeaderOnError: true,
+      },
+    },
+  },
 ];
