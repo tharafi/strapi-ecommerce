@@ -9,7 +9,14 @@ module.exports = ({ env }) => {
           api_secret: env('CLOUDINARY_SECRET'),
         },
         actionOptions: {
-          upload: {},
+          upload: {
+            beforeUpload: (file) => {
+              console.log('Uploading:', file);
+            },
+            afterUpload: (response) => {
+              console.log('Cloudinary response:', response);
+            },
+          },
           uploadStream: {},
           delete: {},
         },
